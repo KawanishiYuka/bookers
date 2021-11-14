@@ -5,6 +5,7 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
+
   def create
     @book = Book.new(book_params)
     if @book.save
@@ -16,13 +17,16 @@ class BooksController < ApplicationController
     end
   end
 
+
   def show
     @book = Book.find(params[:id])
   end
 
+
   def edit
     @book = Book.find(params[:id])
   end
+
 
   def update
     @book = Book.find(params[:id])
@@ -33,6 +37,7 @@ class BooksController < ApplicationController
       render :edit
     end
   end
+
 
   def destroy
     book = Book.find(params[:id])
